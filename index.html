@@ -3,37 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-Vindo ao Nosso Bairro!</title>
+    <title>Bem-Vindo de Volta! 🌀</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <div class="audio-player">
+        <span>📻 Rádio do Bairro</span>
+        <button id="musicBtn" onclick="toggleAudio()">▶ Ouvir Música</button>
+        <audio id="bgMusic" loop>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
     <header>
-        <h1>螺旋 Welcome Home! 螺旋</h1>
-        <p>O lugar mais feliz do mundo está de volta!</p>
+        <h1 class="glitch-text">🌀 WELCOME HOME 🌀</h1>
+        <p class="sparkle">O show favorito de todo mundo!</p>
     </header>
 
     <nav>
-        <a href="#sobre">Sobre Nós</a> | 
-        <a href="#vizinhos">Conheça os Vizinhos</a> | 
-        <a href="#livro-visitas">Livro de Visitas</a>
+        <a href="#sobre">Início</a> | 
+        <a href="#vizinhos">Vizinhos</a> | 
+        <a href="#galeria">Galeria</a> | 
+        <a href="#livro">Segredos</a>
     </nav>
 
     <main>
-        <section id="boas-vindas" class="card">
-            <h2>Olá, Amigo!</h2>
-            <p>Você se lembra de nós? Que bom que você encontrou o caminho de volta para casa. Tudo aqui continua exatamente como você deixou... ou quase tudo.</p>
-            <div class="placeholder-img">[ Imagem Colorida e Nostálgica Aqui ]</div>
+        <section class="card mascot-card">
+            <h2>Nosso Melhor Amigo</h2>
+            
+            <div class="character-container">
+                <div class="character-face">
+                    <div class="eye left-eye"><div class="pupil"></div></div>
+                    <div class="eye right-eye"><div class="pupil"></div></div>
+                    <div class="smile"></div>
+                </div>
+            </div>
+
+            <p>Ele está sempre observando... e esperando por você!</p>
         </section>
 
-        <section id="segredo" class="card hidden-msg">
-            <p><em>Você consegue ouvir eles sorrindo?</em></p>
+        <section id="galeria" class="card">
+            <h2>Memórias Guardadas</h2>
+            <div class="gallery">
+                <div class="polaroid" onclick="revelarSegredo(1)">
+                    <img src="https://picsum.photos/id/1025/250/200" alt="Foto antiga do bairro">
+                    <p>O Dia da Festa '78</p>
+                </div>
+                <div class="polaroid" onclick="revelarSegredo(2)">
+                    <img src="https://picsum.photos/id/1062/250/200" alt="Desenho colorido">
+                    <p>Sua Casa Amarela</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card secret-box">
+            <h3>Uma Mensagem para Você</h3>
+            <p id="secretText" class="hidden-code">Clique na lâmpada para acender a luz...</p>
+            <button onclick="acenderLuz()">💡 Alternar Luz</button>
         </section>
     </main>
 
     <footer>
-        <p>© 1974-1999 Playfellow Workshop. Todos os direitos reservados.</p>
+        <p>© 1974 Playfellow Workshop. Todos os direitos reservados.</p>
+        <a href="#" class="tiny-link" onclick="alert('VOCÊ NÃO DEVERIA ESTAR AQUI')">.</a>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
